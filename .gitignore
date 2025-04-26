@@ -27,3 +27,9 @@ absolute.options
 
 .vscode/
 **/.DS_Store
+
+**/*.aux
+**/*.out
+**/*.log
+**/*.toc
+**/*.synctex.gz

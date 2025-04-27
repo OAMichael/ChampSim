@@ -92,8 +92,10 @@ def plot_stats(bimodal_stats, markov_stats, markov_probability_stats):
     rects = ax.bar(predictor_names, predictor_ipc_gmean, align='center', zorder=2)
     ax.bar_label(rects, padding=2, fontsize=16)
     ax.set_ylim([0, 1])
+    fig.tight_layout()
     plt.savefig(PICTURES_PATH + 'ipc_gmean.pdf')
     ax.set_ylim([0.8, 1])
+    fig.tight_layout()
     plt.savefig(PICTURES_PATH + 'ipc_gmean_zoomed.pdf')
     plt.close()
 
@@ -105,7 +107,42 @@ def plot_stats(bimodal_stats, markov_stats, markov_probability_stats):
     ax.tick_params(axis='both', which='major', labelsize=14)
     rects = ax.bar(predictor_names, predictor_mpki_gmean, align='center', zorder=2)
     ax.bar_label(rects, padding=2, fontsize=16)
+    fig.tight_layout()
     plt.savefig(PICTURES_PATH + 'mpki_gmean.pdf')
+    plt.close()
+
+
+    traces_names = [stats.name.split('.')[0] for stats in bimodal_stats]
+    traces_count = len(traces_names)
+    x = np.arange(traces_count)
+    width = 0.2
+
+    fig, ax = plt.subplots(1, 1, figsize=(24, 8))
+    fig.suptitle('Instructions Per Cycle', fontsize=20)
+    ax.grid(zorder=0)
+    ax.bar(x - width, bimodal_ipc,            width, color='dodgerblue', zorder=2, label='Bimodal')
+    ax.bar(x,         markov_ipc,             width, color='orange',     zorder=2, label='Markov')
+    ax.bar(x + width, markov_probability_ipc, width, color='green',      zorder=2, label='Markov Probability')
+    ax.set_xticks(x, traces_names)
+    ax.set_xlabel('Traces', fontsize=18)
+    ax.set_ylabel('IPC', fontsize=18)
+    ax.legend()
+    fig.tight_layout()
+    plt.savefig(PICTURES_PATH + 'ipc_traces.pdf')
+    plt.close()
+
+    fig, ax = plt.subplots(1, 1, figsize=(24, 8))
+    fig.suptitle('Mispredictions Per Kilo Instruction', fontsize=20)
+    ax.grid(zorder=0)
+    ax.bar(x - width, bimodal_mpki,            width, color='dodgerblue', zorder=2, label='Bimodal')
+    ax.bar(x,         markov_mpki,             width, color='orange',     zorder=2, label='Markov')
+    ax.bar(x + width, markov_probability_mpki, width, color='green',      zorder=2, label='Markov Probability')
+    ax.set_xticks(x, traces_names)
+    ax.set_xlabel('Traces', fontsize=18)
+    ax.set_ylabel('MPKI', fontsize=18)
+    ax.legend()
+    fig.tight_layout()
+    plt.savefig(PICTURES_PATH + 'mpki_traces.pdf')
     plt.close()
 
 

@@ -45,4 +45,32 @@
 	\section*{Вывод}
 	В этом задании были исследованы различные предсказатели переходов. Проведено сравнение следующих трёх: Bimodal Predictor, Markov Predictor и Markov Probability Predictor. По результатам бенчмаркинга оказалось, что Bimodal лучше Markov, а он в свою очередь -- лучше Markov Probability.
 
+	\newpage
+	\section*{Приложение}
+	Ниже представлены графики IPC и MPKI для каждой трассы для более детального рассмотрения результатов. Номер по оси абсцисс -- это номер трассы.
+
+	\newpage
+	\newgeometry{left=0.1cm,right=0.1cm,top=0cm,bottom=0cm}
+	\thispagestyle{empty}
+	\begin{landscape}
+		\vspace*{\fill}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=\linewidth]{./pictures/ipc_traces.pdf}
+		\end{figure}
+		\vspace*{\fill}
+	\end{landscape}
+
+	\newpage
+	\newgeometry{left=0.1cm,right=0.1cm,top=0cm,bottom=0cm}
+	\thispagestyle{empty}
+	\begin{landscape}
+		\vspace*{\fill}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=\linewidth]{./pictures/mpki_traces.pdf}
+		\end{figure}
+		\vspace*{\fill}
+	\end{landscape}
+
 \end{document}

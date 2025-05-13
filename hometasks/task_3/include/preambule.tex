@@ -1,0 +1,59 @@
+\documentclass[a4paper,14pt]{article} 
+
+
+\usepackage{fontenc}			
+\usepackage[utf8]{inputenc}			
+\usepackage[english,russian]{babel}	
+
+\usepackage{graphicx, scalerel}    
+\usepackage{wrapfig}               
+\usepackage[14pt]{extsizes}        
+\usepackage[warn]{mathtext}       
+\usepackage{indentfirst}      
+\usepackage{geometry}
+\usepackage[table,xcdraw]{xcolor} 
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage{wasysym}                
+\usepackage{upgreek}                
+\usepackage{caption}
+\usepackage{multirow}
+\captionsetup{labelsep=period}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{gensymb}
+\usepackage[unicode, pdftex]{hyperref}
+\usepackage{fancyhdr}
+\setlength\fboxsep{3pt}
+\setlength\fboxrule{1pt}
+\usepackage{tocloft}
+\usepackage[pdftex]{lscape}
+\usepackage{icomma}
+\setlength{\arrayrulewidth}{0.4mm}
+\usepackage{setspace}
+\usepackage{pdfpages}
+\usepackage{cmap}
+\usepackage{minted2}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\graphicspath{pictures/}
+
+
+\newcommand{\tocsection}[1]{\section*{#1} \addcontentsline{toc}{section}{#1}}
+\newcommand{\tocsubsection}[1]{\subsection*{#1} \addcontentsline{toc}{subsection}{#1}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\newcommand{\comment}[1]{}
+
+
+\geometry{a4paper,
+		  total={170mm,257mm},
+		  left=30mm,
+		  right=15mm,
+		  top=20mm,
+		  bottom=20mm}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt plus1pt minus1pt}
+\bibliographystyle{plain}
+
+\tikzset{every picture/.style={line width=0.75pt}}

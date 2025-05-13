@@ -33,3 +33,6 @@ absolute.options
 **/*.log
 **/*.toc
 **/*.synctex.gz
+**/*.minted
+**/*.pygtex
+**/*.pygstyle
